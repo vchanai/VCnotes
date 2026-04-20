@@ -72,34 +72,34 @@
                 <!-- 桌面版選單 (Dropdown 模式) -->
                 <div class="hidden md:flex items-center h-full space-x-8">
                     
-                    <!-- 分類 1：靈性與因果 -->
-                    <div class="relative h-full flex items-center dropdown-group cursor-pointer">
-                        <div class="flex items-center gap-1 text-stone-600 hover:text-teal-700 font-medium transition-colors">
-                            靈性與因果 <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </div>
-                        <!-- 下拉內容 -->
-                        <div class="dropdown-menu absolute top-[60px] left-1/2 -translate-x-1/2 w-56 bg-white border border-stone-100 rounded-xl shadow-xl overflow-hidden pt-2 pb-2">
-                            <button onclick="switchPage('page-spirit')" id="nav-spirit" class="w-full text-left px-5 py-3 text-sm nav-item-active transition-colors">
-                                靈性辨別指南
-                            </button>
-                            <button onclick="switchPage('page-karma')" id="nav-karma" class="w-full text-left px-5 py-3 text-sm nav-item-inactive transition-colors">
-                                因果與敬畏
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- 分類 2：紫微斗數 -->
+                    <!-- 分類 1：紫微斗數 (移至前方) -->
                     <div class="relative h-full flex items-center dropdown-group cursor-pointer">
                         <div class="flex items-center gap-1 text-stone-600 hover:text-teal-700 font-medium transition-colors">
                             紫微斗數 <i data-lucide="chevron-down" class="w-4 h-4"></i>
                         </div>
                         <!-- 下拉內容 -->
                         <div class="dropdown-menu absolute top-[60px] left-1/2 -translate-x-1/2 w-56 bg-white border border-stone-100 rounded-xl shadow-xl overflow-hidden pt-2 pb-2">
+                            <button onclick="switchPage('page-2026')" id="nav-2026" class="w-full text-left px-5 py-3 text-sm nav-item-active transition-colors">
+                                2026 化祿指南
+                            </button>
                             <button onclick="switchPage('page-career')" id="nav-career" class="w-full text-left px-5 py-3 text-sm nav-item-inactive transition-colors">
                                 十二宮事業軌跡
                             </button>
-                            <button onclick="switchPage('page-2026')" id="nav-2026" class="w-full text-left px-5 py-3 text-sm nav-item-inactive transition-colors">
-                                2026 化祿指南
+                        </div>
+                    </div>
+
+                    <!-- 分類 2：靈性與因果 -->
+                    <div class="relative h-full flex items-center dropdown-group cursor-pointer">
+                        <div class="flex items-center gap-1 text-stone-600 hover:text-teal-700 font-medium transition-colors">
+                            靈性與因果 <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </div>
+                        <!-- 下拉內容 -->
+                        <div class="dropdown-menu absolute top-[60px] left-1/2 -translate-x-1/2 w-56 bg-white border border-stone-100 rounded-xl shadow-xl overflow-hidden pt-2 pb-2">
+                            <button onclick="switchPage('page-spirit')" id="nav-spirit" class="w-full text-left px-5 py-3 text-sm nav-item-inactive transition-colors">
+                                靈性辨別指南
+                            </button>
+                            <button onclick="switchPage('page-karma')" id="nav-karma" class="w-full text-left px-5 py-3 text-sm nav-item-inactive transition-colors">
+                                因果與敬畏
                             </button>
                         </div>
                     </div>
@@ -118,20 +118,20 @@
         <!-- 手機版展開選單面板 -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-stone-100 absolute w-full left-0 top-16 shadow-xl max-h-[calc(100vh-4rem)] overflow-y-auto">
             <div class="px-4 py-6 space-y-6">
-                <!-- 手機版分類 1 -->
-                <div>
-                    <div class="text-xs font-bold text-stone-400 uppercase tracking-wider mb-3 px-2">靈性與因果</div>
-                    <div class="space-y-1">
-                        <button onclick="switchPage('page-spirit')" id="mobile-nav-spirit" class="block w-full text-left px-4 py-3 rounded-xl nav-item-active transition-colors">靈性辨別指南</button>
-                        <button onclick="switchPage('page-karma')" id="mobile-nav-karma" class="block w-full text-left px-4 py-3 rounded-xl nav-item-inactive transition-colors">因果與敬畏</button>
-                    </div>
-                </div>
-                <!-- 手機版分類 2 -->
+                <!-- 手機版分類 1：紫微斗數 -->
                 <div>
                     <div class="text-xs font-bold text-stone-400 uppercase tracking-wider mb-3 px-2">紫微斗數</div>
                     <div class="space-y-1">
+                        <button onclick="switchPage('page-2026')" id="mobile-nav-2026" class="block w-full text-left px-4 py-3 rounded-xl nav-item-active transition-colors">2026 化祿指南</button>
                         <button onclick="switchPage('page-career')" id="mobile-nav-career" class="block w-full text-left px-4 py-3 rounded-xl nav-item-inactive transition-colors">十二宮事業軌跡</button>
-                        <button onclick="switchPage('page-2026')" id="mobile-nav-2026" class="block w-full text-left px-4 py-3 rounded-xl nav-item-inactive transition-colors">2026 化祿指南</button>
+                    </div>
+                </div>
+                <!-- 手機版分類 2：靈性與因果 -->
+                <div>
+                    <div class="text-xs font-bold text-stone-400 uppercase tracking-wider mb-3 px-2">靈性與因果</div>
+                    <div class="space-y-1">
+                        <button onclick="switchPage('page-spirit')" id="mobile-nav-spirit" class="block w-full text-left px-4 py-3 rounded-xl nav-item-inactive transition-colors">靈性辨別指南</button>
+                        <button onclick="switchPage('page-karma')" id="mobile-nav-karma" class="block w-full text-left px-4 py-3 rounded-xl nav-item-inactive transition-colors">因果與敬畏</button>
                     </div>
                 </div>
             </div>
@@ -139,199 +139,296 @@
     </nav>
 
     <!-- ========================================== -->
-    <!-- 頁面 1：靈性辨別指南 (預設顯示) -->
+    <!-- 頁面 1：2026 化祿指南 (預設顯示) -->
     <!-- ========================================== -->
-    <main id="page-spirit" class="page-content block">
+    <main id="page-2026" class="page-content block">
         <!-- Hero Section -->
         <header class="pt-16 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center" data-aos="fade-up" data-aos-duration="800">
-            <div class="inline-flex items-center justify-center px-4 py-1.5 mb-6 text-sm font-medium tracking-wider text-emerald-900 bg-emerald-100 rounded-full">
-                <i data-lucide="shield-check" class="w-4 h-4 mr-2"></i>
-                確保主權完整
+            <div class="inline-flex items-center justify-center px-4 py-1.5 mb-6 text-sm font-medium tracking-wider text-purple-900 bg-purple-100 rounded-full">
+                <i data-lucide="sparkles" class="w-4 h-4 mr-2"></i>
+                丙午年特輯
             </div>
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-stone-900 mb-6">
-                靈性辨別指南：<br class="md:hidden" />
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">高我覺醒、冤親干擾與外靈入侵</span>
+                2026 紫微斗數<br class="md:hidden" />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-amber-600">「化祿」</span>詳盡指南
             </h1>
             <p class="max-w-2xl mx-auto text-lg text-stone-600 leading-relaxed">
-                在修行或靈性成長的過程中，身體與心理常會出現各種異常反應。透過這套指南，幫助修習者清晰分辨自身狀態。
+                深入淺出解析 2026 年化祿能量的本質，以及它進入十二宮位時分別代表的現實意義與行動指南。
             </p>
         </header>
 
-        <!-- Core Metaphor Section -->
+        <!-- Core Concepts -->
         <section class="py-16 bg-white border-y border-stone-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12" data-aos="fade-up">
-                    <h2 class="text-2xl md:text-3xl font-bold text-stone-900">🏠 核心比喻：身體主權的歸屬</h2>
-                    <p class="mt-4 text-stone-500">透過「屋子」的比喻，我們可以清晰地分辨這些能量狀態的本質。</p>
+                    <h2 class="text-2xl md:text-3xl font-bold text-stone-900">🟢 核心觀念：重新定義「化祿」</h2>
+                    <p class="mt-4 text-stone-500">在 2026 年這個「明亮之年」，化祿並非傳統觀念中天上掉下來的禮物，而是一種<strong class="text-purple-700">「正確回應的信號點」</strong>。</p>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- 狀態 1 -->
-                    <div class="p-8 rounded-2xl bg-stone-50 border border-stone-100 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 group" data-aos="fade-up" data-aos-delay="0">
-                        <div class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center mb-6 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                            <i data-lucide="home" class="w-6 h-6"></i>
+                    <div class="p-8 rounded-2xl bg-stone-50 border border-stone-100 hover:shadow-lg transition-shadow duration-300" data-aos="fade-up" data-aos-delay="0">
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center mb-6 text-amber-600">
+                            <i data-lucide="star" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-stone-900">元神合一 (高我覺醒)</h3>
-                        <p class="text-sm text-emerald-700 font-bold mb-3">你是「屋主」</p>
-                        <p class="text-stone-600 leading-relaxed text-sm">這就像是你主動請人來「裝修屋子」。雖然過程中會有敲打的噪音、環境會變得混亂，但你心裡清楚這一切是為了房屋的升級與進化。</p>
+                        <h3 class="text-xl font-bold mb-3 text-stone-900">1. 價值認可</h3>
+                        <p class="text-stone-600 leading-relaxed">化祿代表你的付出開始進入正向循環，有人願意為你的價值付出資源（資源不一定是錢，可能是時間、信任、機會或平台）。</p>
                     </div>
-                    <!-- 狀態 2 -->
-                    <div class="p-8 rounded-2xl bg-stone-50 border border-stone-100 hover:border-amber-300 hover:shadow-lg transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
-                        <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center mb-6 text-amber-600 group-hover:bg-amber-500 group-hover:text-white transition-colors">
-                            <i data-lucide="door-open" class="w-6 h-6"></i>
+                    <div class="p-8 rounded-2xl bg-stone-50 border border-stone-100 hover:shadow-lg transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center mb-6 text-amber-600">
+                            <i data-lucide="target" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-stone-900">冤親債主干擾</h3>
-                        <p class="text-sm text-amber-700 font-bold mb-3">門口的「債主」</p>
-                        <p class="text-stone-600 leading-relaxed text-sm">這就像有人堵在你的「屋子門口」討債。如果你不開門處理或償還，他們就會持續騷擾，讓你在屋內不得安寧，甚至影響你與鄰居的關係。</p>
+                        <h3 class="text-xl font-bold mb-3 text-stone-900">2. 受力點與投資</h3>
+                        <p class="text-stone-600 leading-relaxed">化祿所在的宮位，是你人生中<strong class="text-stone-900">「用力不會落空」</strong>的地方，也是最值得持續投資的領域。</p>
                     </div>
-                    <!-- 狀態 3 -->
-                    <div class="p-8 rounded-2xl bg-stone-50 border border-stone-100 hover:border-red-300 hover:shadow-lg transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
-                        <div class="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center mb-6 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors">
-                            <i data-lucide="ghost" class="w-6 h-6"></i>
+                    <div class="p-8 rounded-2xl bg-stone-50 border border-stone-100 hover:shadow-lg transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center mb-6 text-amber-600">
+                            <i data-lucide="trending-up" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-stone-900">外靈入侵 (奪舍)</h3>
-                        <p class="text-sm text-red-700 font-bold mb-3">入室的「強盜」</p>
-                        <p class="text-stone-600 leading-relaxed text-sm">這就像強盜直接翻窗進屋，把你綁在角落，他卻坐在你的沙發上自稱主人。此時你已經失去了對屋子的控制權，也就是「主權喪失」。</p>
+                        <h3 class="text-xl font-bold mb-3 text-stone-900">3. 放大效應</h3>
+                        <p class="text-stone-600 leading-relaxed">2026 年是「五陽」之年（明亮之年），化祿會放大已經存在的價值。如果你有累積和行動，你會感覺到：速度變快、回報變具體、方向變明確。</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Detailed Characteristics Section -->
-        <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <!-- 12 Palaces Breakdown -->
+        <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-4">🔍 三種狀態的深度特徵分析</h2>
-                <p class="text-stone-500">從身體、意識與磁場三個維度進行自我檢視</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-4">📘 十二宮位化祿詳解與教學</h2>
+                <p class="text-stone-500">化祿落入各宮位的現實意義與行動建議</p>
             </div>
             
-            <div class="space-y-8">
-                <!-- 1. 元神合一 -->
-                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border-l-4 border-emerald-500 border-y border-r border-stone-200" data-aos="fade-up">
-                    <h3 class="text-2xl font-bold text-stone-900 mb-6 flex items-center">
-                        <span class="bg-emerald-100 text-emerald-700 w-8 h-8 rounded-full flex items-center justify-center mr-3 text-lg">一</span>
-                        元神合一：覺醒的成長痛
-                    </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div>
-                            <h4 class="font-bold text-emerald-800 mb-2 flex items-center"><i data-lucide="activity" class="w-5 h-5 mr-2"></i>身體感受</h4>
-                            <p class="text-stone-600 text-sm leading-relaxed">雖然會感到疲累，但你能察覺到那是成長的力量。疼痛通常有規律（如特定的頭頂脹痛或脊椎發熱感），心跳雖快但胸襟感是開闊的，感覺能量在打通經絡。</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 1. 命宮 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 hover:border-purple-300 hover:shadow-md transition-all group" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i data-lucide="user"></i>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-emerald-800 mb-2 flex items-center"><i data-lucide="brain" class="w-5 h-5 mr-2"></i>意識心態</h4>
-                            <p class="text-stone-600 text-sm leading-relaxed">冒出的念頭多半是突然領悟的道理，或是對修行有了更深的理解。雖然可能伴隨情緒波動，但你的底色是清醒的，知道不適只是暫時的過程。</p>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-emerald-800 mb-2 flex items-center"><i data-lucide="wifi" class="w-5 h-5 mr-2"></i>社交磁場</h4>
-                            <p class="text-stone-600 text-sm leading-relaxed">你的能量場像是一盞燈，會自然吸引志同道合、頻率相近的人靠近。</p>
-                        </div>
+                        <h3 class="text-xl font-bold text-stone-900 ml-4">1. 命宮</h3>
+                    </div>
+                    <div class="space-y-3 mt-4">
+                        <p class="text-stone-700 text-sm"><strong class="text-stone-900">現狀變革：</strong>內心拉扯減少，更容易獲得周遭環境的支持。</p>
+                        <p class="text-stone-700 text-sm"><strong class="text-stone-900">實例：</strong>若想從穩定工作轉向自由職業，2026 年能快速接到第一個優質項目。</p>
+                        <p class="text-purple-800 text-sm font-medium bg-purple-50 p-2 rounded">建議：大膽表達「你是誰」，將個人特色作為核心競爭力，不要模仿他人。</p>
                     </div>
                 </div>
 
-                <!-- 2. 冤親債主 -->
-                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border-l-4 border-amber-500 border-y border-r border-stone-200" data-aos="fade-up">
-                    <h3 class="text-2xl font-bold text-stone-900 mb-6 flex items-center">
-                        <span class="bg-amber-100 text-amber-700 w-8 h-8 rounded-full flex items-center justify-center mr-3 text-lg">二</span>
-                        冤親債主：能量的負擔
-                    </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div>
-                            <h4 class="font-bold text-amber-800 mb-2 flex items-center"><i data-lucide="activity" class="w-5 h-5 mr-2"></i>身體感受</h4>
-                            <p class="text-stone-600 text-sm leading-relaxed">類似重感冒般的無力感，且去醫院檢查往往查不出病因。感覺精氣神被不斷抽走，就像電池持續在漏電。</p>
+                <!-- 2. 兄弟宮 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 hover:border-purple-300 hover:shadow-md transition-all group" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i data-lucide="users"></i>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-amber-800 mb-2 flex items-center"><i data-lucide="brain" class="w-5 h-5 mr-2"></i>意識心態</h4>
-                            <p class="text-stone-600 text-sm leading-relaxed">會不由自主地往負面方向思考，或是無緣無故產生強烈的憎恨感、報復心或悲觀情緒。這些念頭雖然仍屬於你，但被外力極度放大了。</p>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-amber-800 mb-2 flex items-center"><i data-lucide="wifi" class="w-5 h-5 mr-2"></i>社交磁場</h4>
-                            <p class="text-stone-600 text-sm leading-relaxed">能量場處於攻擊狀態，散發負面頻率。朋友會突然疏遠，同事變成小人，人們本能地想要避開你。</p>
-                        </div>
+                        <h3 class="text-xl font-bold text-stone-900 ml-4">2. 兄弟宮</h3>
+                    </div>
+                    <div class="space-y-3 mt-4">
+                        <p class="text-stone-700 text-sm"><strong class="text-stone-900">現狀變革：</strong>不再需要獨自支撐局面，適合的夥伴與動力會自然出現。</p>
+                        <p class="text-stone-700 text-sm"><strong class="text-stone-900">實例：</strong>推動項目時，會出現擁有你所缺技能的人主動配合。</p>
+                        <p class="text-purple-800 text-sm font-medium bg-purple-50 p-2 rounded">建議：2026 年不適合單打獨鬥，應著眼於團隊升級。</p>
                     </div>
                 </div>
 
-                <!-- 3. 外靈入侵 -->
-                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border-l-4 border-red-500 border-y border-r border-stone-200" data-aos="fade-up">
-                    <h3 class="text-2xl font-bold text-stone-900 mb-6 flex items-center">
-                        <span class="bg-red-100 text-red-700 w-8 h-8 rounded-full flex items-center justify-center mr-3 text-lg">三</span>
-                        外靈入侵：主權的淪陷
-                    </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div>
-                            <h4 class="font-bold text-red-800 mb-2 flex items-center"><i data-lucide="activity" class="w-5 h-5 mr-2"></i>身體感受</h4>
-                            <p class="text-stone-600 text-sm leading-relaxed">身體特定部位極度沉重，彷彿被重物壓住。常伴隨忽冷忽熱、聞到陰冷的異味，甚至會出現「意識斷片」，不記得自己剛剛說過的話。</p>
+                <!-- 3. 夫妻宮 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 hover:border-purple-300 hover:shadow-md transition-all group" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i data-lucide="heart"></i>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-red-800 mb-2 flex items-center"><i data-lucide="brain" class="w-5 h-5 mr-2"></i>意識心態</h4>
-                            <p class="text-stone-600 text-sm leading-relaxed">腦海中出現各類嘈雜的聲音，甚至是指揮你去做違背本性的事。你會用完全不屬於自己的語氣說話，清醒後卻像睡了一場大覺。</p>
+                        <h3 class="text-xl font-bold text-stone-900 ml-4">3. 夫妻宮</h3>
+                    </div>
+                    <div class="space-y-3 mt-4">
+                        <p class="text-stone-700 text-sm"><strong class="text-stone-900">現狀變革：</strong>關係從情感消耗走向實際支持，雙方成為可靠後盾。</p>
+                        <p class="text-stone-700 text-sm"><strong class="text-stone-900">實例：</strong>伴侶間會找到更好的協商模式，如一方衝刺事業時，另一方主動負責家庭。</p>
+                        <p class="text-purple-800 text-sm font-medium bg-purple-50 p-2 rounded">建議：關係應建立在理性與互相體諒之上。</p>
+                    </div>
+                </div>
+
+                <!-- 4. 子女宮 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 hover:border-purple-300 hover:shadow-md transition-all group" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i data-lucide="sparkles"></i>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-red-800 mb-2 flex items-center"><i data-lucide="wifi" class="w-5 h-5 mr-2"></i>社交磁場</h4>
-                            <p class="text-stone-600 text-sm leading-relaxed">氣場極其陰冷。家人見到你會感到恐懼，小孩、寵物會莫名對你哭鬧或避開。</p>
+                        <h3 class="text-xl font-bold text-stone-900 ml-4">4. 子女宮</h3>
+                    </div>
+                    <div class="space-y-3 mt-4">
+                        <p class="text-stone-700 text-sm"><strong class="text-stone-900">現狀變革：</strong>投入心血的事物（如作品、創意、寵物）開始產生價值。</p>
+                        <p class="text-stone-700 text-sm"><strong class="text-stone-900">實例：</strong>經營已久的自媒體可能因一篇關鍵文章爆紅，連結到真誠的粉絲或廣告。</p>
+                        <p class="text-purple-800 text-sm font-medium bg-purple-50 p-2 rounded">建議：做長期的項目，而非追求短期刺激。</p>
+                    </div>
+                </div>
+
+                <!-- 5. 財帛宮 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 hover:border-purple-300 hover:shadow-md transition-all group" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i data-lucide="coins"></i>
                         </div>
+                        <h3 class="text-xl font-bold text-stone-900 ml-4">5. 財帛宮</h3>
+                    </div>
+                    <div class="space-y-3 mt-4">
+                        <p class="text-stone-700 text-sm"><strong class="text-stone-900">現狀變革：</strong>財富變得穩健，雖然未必是暴利，但波動減少、更有規律。</p>
+                        <p class="text-stone-700 text-sm"><strong class="text-stone-900">實例：</strong>建立穩定的客戶群或發展出一項有規律收入的副業。</p>
+                        <p class="text-purple-800 text-sm font-medium bg-purple-50 p-2 rounded">建議：選擇長期有錢賺的方式，不要抱持「試一次」的投機心態。</p>
+                    </div>
+                </div>
+
+                <!-- 6. 疾厄宮 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 hover:border-purple-300 hover:shadow-md transition-all group" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i data-lucide="activity"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-stone-900 ml-4">6. 疾厄宮</h3>
+                    </div>
+                    <div class="space-y-3 mt-4">
+                        <p class="text-stone-700 text-sm"><strong class="text-stone-900">現狀變革：</strong>體力改善、睡眠質量提升，身體對你的照顧給予正向回饋。</p>
+                        <p class="text-purple-800 text-sm font-medium bg-purple-50 p-2 rounded">建議：調整工作與生活節奏，讓情緒穩定成為你的生產力。</p>
+                    </div>
+                </div>
+
+                <!-- 7. 遷移宮 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 hover:border-purple-300 hover:shadow-md transition-all group" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i data-lucide="plane-takeoff"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-stone-900 ml-4">7. 遷移宮</h3>
+                    </div>
+                    <div class="space-y-3 mt-4">
+                        <p class="text-stone-700 text-sm"><strong class="text-stone-900">現狀變革：</strong>主動向外開拓會帶來意想不到的機會與資源連結。</p>
+                        <p class="text-stone-700 text-sm"><strong class="text-stone-900">實例：</strong>參加行業交流活動可能遇到關鍵人物，直接提升你的視角與格局。</p>
+                        <p class="text-purple-800 text-sm font-medium bg-purple-50 p-2 rounded">建議：不要怕移動，走出舒適圈才有新資源。</p>
+                    </div>
+                </div>
+
+                <!-- 8. 交友宮 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 hover:border-purple-300 hover:shadow-md transition-all group" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i data-lucide="handshake"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-stone-900 ml-4">8. 交友宮</h3>
+                    </div>
+                    <div class="space-y-3 mt-4">
+                        <p class="text-stone-700 text-sm"><strong class="text-stone-900">現狀變革：</strong>社交網絡從點贊之交轉向深度協作、互相成就。</p>
+                        <p class="text-stone-700 text-sm"><strong class="text-stone-900">實例：</strong>舊識中會有人主動提議合作，且雙方能快速推進實事。</p>
+                        <p class="text-purple-800 text-sm font-medium bg-purple-50 p-2 rounded">建議：用心經營這些關鍵的深度關係。</p>
+                    </div>
+                </div>
+
+                <!-- 9. 官祿宮 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 hover:border-purple-300 hover:shadow-md transition-all group" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i data-lucide="briefcase"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-stone-900 ml-4">9. 官祿宮</h3>
+                    </div>
+                    <div class="space-y-3 mt-4">
+                        <p class="text-stone-700 text-sm"><strong class="text-stone-900">現狀變革：</strong>長期的努力收到外界的正向確認，證明路徑正確。</p>
+                        <p class="text-stone-700 text-sm"><strong class="text-stone-900">實例：</strong>深耕兩年的新領域，今年會收到重要合約或權威客戶的認可。</p>
+                        <p class="text-purple-800 text-sm font-medium bg-purple-50 p-2 rounded">建議：繼續堅持目前的道路，不要中途懷疑自己。</p>
+                    </div>
+                </div>
+
+                <!-- 10. 田宅宮 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 hover:border-purple-300 hover:shadow-md transition-all group" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i data-lucide="home"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-stone-900 ml-4">10. 田宅宮</h3>
+                    </div>
+                    <div class="space-y-3 mt-4">
+                        <p class="text-stone-700 text-sm"><strong class="text-stone-900">現狀變革：</strong>家庭環境改善，長期困擾的居家或家事問題得到緩解。</p>
+                        <p class="text-purple-800 text-sm font-medium bg-purple-50 p-2 rounded">建議：適合長期的佈局，而非激進的改變。</p>
+                    </div>
+                </div>
+
+                <!-- 11. 福德宮 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 hover:border-purple-300 hover:shadow-md transition-all group" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i data-lucide="smile"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-stone-900 ml-4">11. 福德宮</h3>
+                    </div>
+                    <div class="space-y-3 mt-4">
+                        <p class="text-stone-700 text-sm"><strong class="text-stone-900">現狀變革：</strong>容易感到滿足，靈感增強，找到讓心靈平靜的方法。</p>
+                        <p class="text-stone-700 text-sm"><strong class="text-stone-900">實例：</strong>透過冥想、閱讀或跳舞獲得真實的愉悅。</p>
+                        <p class="text-purple-800 text-sm font-medium bg-purple-50 p-2 rounded">建議：與自己和解，穩定情緒就是最強的競爭力。</p>
+                    </div>
+                </div>
+
+                <!-- 12. 父母宮 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 hover:border-purple-300 hover:shadow-md transition-all group" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i data-lucide="shield-check"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-stone-900 ml-4">12. 父母宮</h3>
+                    </div>
+                    <div class="space-y-3 mt-4">
+                        <p class="text-stone-700 text-sm"><strong class="text-stone-900">現狀變革：</strong>容易獲得長輩、上級或官方資源的認可與支持。</p>
+                        <p class="text-stone-700 text-sm"><strong class="text-stone-900">實例：</strong>申請重要資格或項目時，會遇到前輩指點，流程變得異常順利。</p>
+                        <p class="text-purple-800 text-sm font-medium bg-purple-50 p-2 rounded">建議：大膽開口請求幫助，接受他人的提攜。</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Practical Guide -->
+        <!-- Summary -->
         <section class="py-20 bg-stone-100 border-t border-stone-200" data-aos="fade-up">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-center mb-8">
-                    <div class="w-16 h-16 rounded-full bg-teal-100 flex items-center justify-center shadow-sm">
-                        <i data-lucide="wrench" class="w-8 h-8 text-teal-600"></i>
+                    <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center shadow-sm">
+                        <i data-lucide="lightbulb" class="w-8 h-8 text-purple-600"></i>
                     </div>
                 </div>
-                <h2 class="text-3xl font-bold text-center mb-10 text-stone-900">🛠️ 實作辨別與處理三部曲</h2>
-                <p class="text-center text-stone-600 mb-10">當你感到困惑、無法確定狀態時，請依照下列順序進行測試與處理：</p>
-                
+                <h2 class="text-3xl font-bold text-center mb-10 text-stone-900">💡 總結筆記：如何把握 2026？</h2>
                 <div class="space-y-6 text-lg text-stone-700">
                     <div class="flex items-start bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-stone-200">
-                        <div class="w-10 h-10 rounded-full bg-teal-500 text-white flex items-center justify-center font-bold mr-5 flex-shrink-0 text-lg">1</div>
-                        <div class="leading-relaxed w-full">
-                            <strong class="text-stone-900 font-bold block mb-2 text-xl">優先排除生理因素（科學診斷）</strong>
-                            <p class="text-stone-600 text-base">任何玄學判斷前，必須先尋求醫療建議。許多所謂的「靈性反應」其實是生理或精神健康的信號，不應盲目將所有問題歸類為玄學。</p>
-                        </div>
+                        <div class="w-8 h-8 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold mr-5 flex-shrink-0 text-sm">1</div>
+                        <p class="leading-relaxed">2026 不會讓你「一夜暴富」，但會讓你<strong class="text-stone-900 font-bold">「極度清楚」</strong>。它會告訴你哪條路是值得走下去的，哪裡是你的立足點。</p>
                     </div>
                     <div class="flex items-start bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-stone-200">
-                        <div class="w-10 h-10 rounded-full bg-teal-500 text-white flex items-center justify-center font-bold mr-5 flex-shrink-0 text-lg">2</div>
-                        <div class="leading-relaxed w-full">
-                            <strong class="text-stone-900 font-bold block mb-2 text-xl">回向壓力測試（債務處理）</strong>
-                            <p class="text-stone-600 text-base mb-3">誠心持誦經典（依個人信仰）回向給冤親債主。</p>
-                            <ul class="list-disc pl-5 space-y-2 text-stone-600 text-base">
-                                <li><strong class="text-amber-700">如果是債主：</strong>念經過程雖有干擾，但做完後會感到放鬆、沉重感減輕，代表債主收到了補償。</li>
-                                <li><strong class="text-red-700">如果是外靈：</strong>會對「正念」極度反抗，讓你產生強烈的煩躁感，甚至誘使你產生「我不需要靠形式、我是天選之人」等傲慢念頭來阻止你繼續。</li>
-                            </ul>
-                        </div>
+                        <div class="w-8 h-8 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold mr-5 flex-shrink-0 text-sm">2</div>
+                        <p class="leading-relaxed"><strong class="text-stone-900 font-bold">行動是關鍵：</strong>化祿是信號，只有在你對應的領域投入行動，系統才會開始接應你。</p>
                     </div>
                     <div class="flex items-start bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-stone-200">
-                        <div class="w-10 h-10 rounded-full bg-teal-500 text-white flex items-center justify-center font-bold mr-5 flex-shrink-0 text-lg">3</div>
-                        <div class="leading-relaxed w-full">
-                            <strong class="text-stone-900 font-bold block mb-2 text-xl">終極自問：我是否更自由？</strong>
-                            <p class="text-stone-600 text-base">真正的修行與覺醒，會讓你越來越像真實的自己，並感受到靈魂的自由與平靜。如果某種力量讓你變得越來越虛弱、暴躁、不像原本的自己，無論它自稱是哪位大神，那都是一種傷害，必須請其離開。</p>
-                        </div>
+                        <div class="w-8 h-8 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold mr-5 flex-shrink-0 text-sm">3</div>
+                        <p class="leading-relaxed"><strong class="text-stone-900 font-bold">核心價值：</strong>將力氣集中在回報率最高（化祿所在）的地方發展。</p>
                     </div>
-                </div>
-
-                <!-- 結語 -->
-                <div class="mt-12 bg-teal-50 border border-teal-200 rounded-2xl p-8 text-center">
-                    <h3 class="text-xl font-bold text-teal-900 mb-4 flex items-center justify-center">
-                        <i data-lucide="lightbulb" class="w-6 h-6 mr-2"></i> 教學結語
-                    </h3>
-                    <p class="text-teal-800 leading-relaxed">
-                        真正的「高我」是不需要向外證明的，它本來就在你體內。不要沉迷於分別到底是誰在干擾，訓練自己安守本心，走回現實的路。當你核心穩定，該離開的自然會走，該來的福報也攔不住。
-                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Video Links -->
-        <section class="py-16 bg-white border-t border-stone-200">
-            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
+        <!-- 影片連結 (化祿) -->
+        <section class="py-16 bg-white border-t border-stone-200" data-aos="fade-up">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h3 class="text-2xl font-bold text-stone-900 mb-8 text-center">相關影片學習資源</h3>
                 <div class="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden">
-                    <a href="https://youtu.be/p_rYKDpoEGA?si=kD9Fb6L_VhuZEe5D" target="_blank" rel="noopener noreferrer" class="flex items-center p-5 hover:bg-stone-50 transition-colors group">
-                        <i data-lucide="play-circle" class="w-6 h-6 text-stone-400 group-hover:text-teal-600 transition-colors mr-4"></i>
-                        <span class="text-stone-700 group-hover:text-teal-900 font-medium">EP76: 如何辦別高我覺醒？高靈連結？還是冤親干擾丨惡靈入侵</span>
+                    <a href="https://youtu.be/ACdpVOoiND0?si=CQnfFIUEg-zAJJSG" target="_blank" rel="noopener noreferrer" class="flex items-center p-5 hover:bg-stone-50 transition-colors border-b border-stone-100 group">
+                        <i data-lucide="play-circle" class="w-6 h-6 text-stone-400 group-hover:text-purple-600 transition-colors mr-4"></i>
+                        <span class="text-stone-700 group-hover:text-purple-900 font-medium">EP66: 2026你最該捉住的”化祿” 之一</span>
+                    </a>
+                    <a href="https://youtu.be/j7zKEZYccSE?si=5-frJgZd41prKhQv" target="_blank" rel="noopener noreferrer" class="flex items-center p-5 hover:bg-stone-50 transition-colors border-b border-stone-100 group">
+                        <i data-lucide="play-circle" class="w-6 h-6 text-stone-400 group-hover:text-purple-600 transition-colors mr-4"></i>
+                        <span class="text-stone-700 group-hover:text-purple-900 font-medium">EP67: 2026你最該捉住的”化祿” 之二</span>
+                    </a>
+                    <a href="https://youtu.be/MZGlB49fXyk?si=GGJu-HDTBEgwgmFC" target="_blank" rel="noopener noreferrer" class="flex items-center p-5 hover:bg-stone-50 transition-colors border-b border-stone-100 group">
+                        <i data-lucide="play-circle" class="w-6 h-6 text-stone-400 group-hover:text-purple-600 transition-colors mr-4"></i>
+                        <span class="text-stone-700 group-hover:text-purple-900 font-medium">EP68: 2026你最該捉住的”化祿” 之三</span>
+                    </a>
+                    <a href="https://youtu.be/ssg6oXJueUE?si=yC8aSVGt7x9Vm3U0" target="_blank" rel="noopener noreferrer" class="flex items-center p-5 hover:bg-stone-50 transition-colors border-b border-stone-100 group">
+                        <i data-lucide="play-circle" class="w-6 h-6 text-stone-400 group-hover:text-purple-600 transition-colors mr-4"></i>
+                        <span class="text-stone-700 group-hover:text-purple-900 font-medium">EP69: 2026你最該捉住的”化祿” 之四</span>
+                    </a>
+                    <a href="https://youtu.be/V3Z7GzRYNfk?si=mzHwvMlIMj8yAVFa" target="_blank" rel="noopener noreferrer" class="flex items-center p-5 hover:bg-stone-50 transition-colors group">
+                        <i data-lucide="play-circle" class="w-6 h-6 text-stone-400 group-hover:text-purple-600 transition-colors mr-4"></i>
+                        <span class="text-stone-700 group-hover:text-purple-900 font-medium">EP70: 2026你最該捉住的”化祿” 之五</span>
                     </a>
                 </div>
             </div>
@@ -342,7 +439,7 @@
     <!-- 頁面 2：十二宮事業運行軌跡 (隱藏) -->
     <!-- ========================================== -->
     <main id="page-career" class="page-content hidden-page">
-        <!-- Hero Section -->
+        <!-- (此處保留原本的事業軌跡內容，完全不變) -->
         <header class="pt-16 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
             <div class="inline-flex items-center justify-center px-4 py-1.5 mb-6 text-sm font-medium tracking-wider text-blue-900 bg-blue-100 rounded-full">
                 <i data-lucide="compass" class="w-4 h-4 mr-2"></i>
@@ -357,7 +454,6 @@
             </p>
         </header>
 
-        <!-- Core Concepts -->
         <section class="py-16 bg-white border-y border-stone-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
@@ -384,7 +480,7 @@
             </div>
         </section>
 
-        <!-- 12 Palaces Grid -->
+        <!-- 12 Palaces Grid (Career) -->
         <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-4">十二宮事業階段詳解</h2>
@@ -604,7 +700,7 @@
             </div>
         </section>
 
-        <!-- Summary -->
+        <!-- Summary (Career) -->
         <section class="py-20 bg-stone-100 border-t border-stone-200">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-center mb-8">
@@ -637,7 +733,7 @@
             </div>
         </section>
 
-        <!-- Video Links -->
+        <!-- Video Links (Career) -->
         <section class="py-16 bg-white border-t border-stone-200">
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h3 class="text-2xl font-bold text-stone-900 mb-8 text-center">相關影片學習資源</h3>
@@ -664,80 +760,199 @@
     </main>
 
     <!-- ========================================== -->
-    <!-- 頁面 3：2026 化祿指南 (隱藏) -->
+    <!-- 頁面 3：靈性辨別指南 (隱藏) -->
     <!-- ========================================== -->
-    <main id="page-2026" class="page-content hidden-page">
+    <main id="page-spirit" class="page-content hidden-page">
+        <!-- (此處保留原本的靈性辨別指南內容，完全不變) -->
         <header class="pt-16 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
-            <div class="inline-flex items-center justify-center px-4 py-1.5 mb-6 text-sm font-medium tracking-wider text-purple-900 bg-purple-100 rounded-full">
-                <i data-lucide="sparkles" class="w-4 h-4 mr-2"></i>
-                丙午年特輯
+            <div class="inline-flex items-center justify-center px-4 py-1.5 mb-6 text-sm font-medium tracking-wider text-emerald-900 bg-emerald-100 rounded-full">
+                <i data-lucide="shield-check" class="w-4 h-4 mr-2"></i>
+                確保主權完整
             </div>
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-stone-900 mb-6">
-                2026 紫微斗數<br class="md:hidden" />
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-amber-600">「化祿」</span>詳盡指南
+                靈性辨別指南：<br class="md:hidden" />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">高我覺醒、冤親干擾與外靈入侵</span>
             </h1>
             <p class="max-w-2xl mx-auto text-lg text-stone-600 leading-relaxed">
-                深入淺出解析 2026 年化祿能量的本質，以及它進入十二宮位時分別代表的現實意義與行動指南。
+                在修行或靈性成長的過程中，身體與心理常會出現各種異常反應。透過這套指南，幫助修習者清晰分辨自身狀態。
             </p>
         </header>
 
+        <!-- Core Metaphor Section -->
         <section class="py-16 bg-white border-y border-stone-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
-                    <h2 class="text-2xl md:text-3xl font-bold text-stone-900">重新定義「化祿」</h2>
-                    <p class="mt-4 text-stone-500">在 2026 年這個「明亮之年」，化祿並非天上掉下來的禮物，而是一種「正確回應的信號點」。</p>
+                    <h2 class="text-2xl md:text-3xl font-bold text-stone-900">🏠 核心比喻：身體主權的歸屬</h2>
+                    <p class="mt-4 text-stone-500">透過「屋子」的比喻，我們可以清晰地分辨這些能量狀態的本質。</p>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="p-8 rounded-2xl bg-stone-50 border border-stone-100">
-                        <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center mb-6 text-amber-600">
-                            <i data-lucide="star" class="w-6 h-6"></i>
+                    <!-- 狀態 1 -->
+                    <div class="p-8 rounded-2xl bg-stone-50 border border-stone-100 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 group">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center mb-6 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                            <i data-lucide="home" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-stone-900">價值認可</h3>
-                        <p class="text-stone-600 leading-relaxed">化祿代表你的付出開始進入正向循環，有人願意為你的價值付出資源。</p>
+                        <h3 class="text-xl font-bold mb-3 text-stone-900">元神合一 (高我覺醒)</h3>
+                        <p class="text-sm text-emerald-700 font-bold mb-3">你是「屋主」</p>
+                        <p class="text-stone-600 leading-relaxed text-sm">這就像是你主動請人來「裝修屋子」。雖然過程中會有敲打的噪音、環境會變得混亂，但你心裡清楚這一切是為了房屋的升級與進化。</p>
                     </div>
-                    <div class="p-8 rounded-2xl bg-stone-50 border border-stone-100">
-                        <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center mb-6 text-amber-600">
-                            <i data-lucide="target" class="w-6 h-6"></i>
+                    <!-- 狀態 2 -->
+                    <div class="p-8 rounded-2xl bg-stone-50 border border-stone-100 hover:border-amber-300 hover:shadow-lg transition-all duration-300 group">
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center mb-6 text-amber-600 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                            <i data-lucide="door-open" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-stone-900">受力點與投資</h3>
-                        <p class="text-stone-600 leading-relaxed">化祿所在的宮位，是你人生中「用力不會落空」的地方，也是最值得持續投資的領域。</p>
+                        <h3 class="text-xl font-bold mb-3 text-stone-900">冤親債主干擾</h3>
+                        <p class="text-sm text-amber-700 font-bold mb-3">門口的「債主」</p>
+                        <p class="text-stone-600 leading-relaxed text-sm">這就像有人堵在你的「屋子門口」討債。如果你不開門處理或償還，他們就會持續騷擾，讓你在屋內不得安寧，甚至影響你與鄰居的關係。</p>
                     </div>
-                    <div class="p-8 rounded-2xl bg-stone-50 border border-stone-100">
-                        <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center mb-6 text-amber-600">
-                            <i data-lucide="trending-up" class="w-6 h-6"></i>
+                    <!-- 狀態 3 -->
+                    <div class="p-8 rounded-2xl bg-stone-50 border border-stone-100 hover:border-red-300 hover:shadow-lg transition-all duration-300 group">
+                        <div class="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center mb-6 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors">
+                            <i data-lucide="ghost" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-stone-900">放大效應</h3>
-                        <p class="text-stone-600 leading-relaxed">2026 年是「五陽」之年，化祿會放大已經存在的價值。速度變快、回報變具體。</p>
+                        <h3 class="text-xl font-bold mb-3 text-stone-900">外靈入侵 (奪舍)</h3>
+                        <p class="text-sm text-red-700 font-bold mb-3">入室的「強盜」</p>
+                        <p class="text-stone-600 leading-relaxed text-sm">這就像強盜直接翻窗進屋，把你綁在角落，他卻坐在你的沙發上自稱主人。此時你已經失去了對屋子的控制權，也就是「主權喪失」。</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 影片連結 (化祿) -->
+        <!-- Detailed Characteristics Section -->
+        <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-4">🔍 三種狀態的深度特徵分析</h2>
+                <p class="text-stone-500">從身體、意識與磁場三個維度進行自我檢視</p>
+            </div>
+            
+            <div class="space-y-8">
+                <!-- 1. 元神合一 -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border-l-4 border-emerald-500 border-y border-r border-stone-200">
+                    <h3 class="text-2xl font-bold text-stone-900 mb-6 flex items-center">
+                        <span class="bg-emerald-100 text-emerald-700 w-8 h-8 rounded-full flex items-center justify-center mr-3 text-lg">一</span>
+                        元神合一：覺醒的成長痛
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="font-bold text-emerald-800 mb-2 flex items-center"><i data-lucide="activity" class="w-5 h-5 mr-2"></i>身體感受</h4>
+                            <p class="text-stone-600 text-sm leading-relaxed">雖然會感到疲累，但你能察覺到那是成長的力量。疼痛通常有規律（如特定的頭頂脹痛或脊椎發熱感），心跳雖快但胸襟感是開闊的，感覺能量在打通經絡。</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-emerald-800 mb-2 flex items-center"><i data-lucide="brain" class="w-5 h-5 mr-2"></i>意識心態</h4>
+                            <p class="text-stone-600 text-sm leading-relaxed">冒出的念頭多半是突然領悟的道理，或是對修行有了更深的理解。雖然可能伴隨情緒波動，但你的底色是清醒的，知道不適只是暫時的過程。</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-emerald-800 mb-2 flex items-center"><i data-lucide="wifi" class="w-5 h-5 mr-2"></i>社交磁場</h4>
+                            <p class="text-stone-600 text-sm leading-relaxed">你的能量場像是一盞燈，會自然吸引志同道合、頻率相近的人靠近。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. 冤親債主 -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border-l-4 border-amber-500 border-y border-r border-stone-200">
+                    <h3 class="text-2xl font-bold text-stone-900 mb-6 flex items-center">
+                        <span class="bg-amber-100 text-amber-700 w-8 h-8 rounded-full flex items-center justify-center mr-3 text-lg">二</span>
+                        冤親債主：能量的負擔
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="font-bold text-amber-800 mb-2 flex items-center"><i data-lucide="activity" class="w-5 h-5 mr-2"></i>身體感受</h4>
+                            <p class="text-stone-600 text-sm leading-relaxed">類似重感冒般的無力感，且去醫院檢查往往查不出病因。感覺精氣神被不斷抽走，就像電池持續在漏電。</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-amber-800 mb-2 flex items-center"><i data-lucide="brain" class="w-5 h-5 mr-2"></i>意識心態</h4>
+                            <p class="text-stone-600 text-sm leading-relaxed">會不由自主地往負面方向思考，或是無緣無故產生強烈的憎恨感、報復心或悲觀情緒。這些念頭雖然仍屬於你，但被外力極度放大了。</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-amber-800 mb-2 flex items-center"><i data-lucide="wifi" class="w-5 h-5 mr-2"></i>社交磁場</h4>
+                            <p class="text-stone-600 text-sm leading-relaxed">能量場處於攻擊狀態，散發負面頻率。朋友會突然疏遠，同事變成小人，人們本能地想要避開你。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. 外靈入侵 -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border-l-4 border-red-500 border-y border-r border-stone-200">
+                    <h3 class="text-2xl font-bold text-stone-900 mb-6 flex items-center">
+                        <span class="bg-red-100 text-red-700 w-8 h-8 rounded-full flex items-center justify-center mr-3 text-lg">三</span>
+                        外靈入侵：主權的淪陷
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="font-bold text-red-800 mb-2 flex items-center"><i data-lucide="activity" class="w-5 h-5 mr-2"></i>身體感受</h4>
+                            <p class="text-stone-600 text-sm leading-relaxed">身體特定部位極度沉重，彷彿被重物壓住。常伴隨忽冷忽熱、聞到陰冷的異味，甚至會出現「意識斷片」，不記得自己剛剛說過的話。</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-red-800 mb-2 flex items-center"><i data-lucide="brain" class="w-5 h-5 mr-2"></i>意識心態</h4>
+                            <p class="text-stone-600 text-sm leading-relaxed">腦海中出現各類嘈雜的聲音，甚至是指揮你去做違背本性的事。你會用完全不屬於自己的語氣說話，清醒後卻像睡了一場大覺。</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-red-800 mb-2 flex items-center"><i data-lucide="wifi" class="w-5 h-5 mr-2"></i>社交磁場</h4>
+                            <p class="text-stone-600 text-sm leading-relaxed">氣場極其陰冷。家人見到你會感到恐懼，小孩、寵物會莫名對你哭鬧或避開。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practical Guide -->
+        <section class="py-20 bg-stone-100 border-t border-stone-200">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-center mb-8">
+                    <div class="w-16 h-16 rounded-full bg-teal-100 flex items-center justify-center shadow-sm">
+                        <i data-lucide="wrench" class="w-8 h-8 text-teal-600"></i>
+                    </div>
+                </div>
+                <h2 class="text-3xl font-bold text-center mb-10 text-stone-900">🛠️ 實作辨別與處理三部曲</h2>
+                <p class="text-center text-stone-600 mb-10">當你感到困惑、無法確定狀態時，請依照下列順序進行測試與處理：</p>
+                
+                <div class="space-y-6 text-lg text-stone-700">
+                    <div class="flex items-start bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-stone-200">
+                        <div class="w-10 h-10 rounded-full bg-teal-500 text-white flex items-center justify-center font-bold mr-5 flex-shrink-0 text-lg">1</div>
+                        <div class="leading-relaxed w-full">
+                            <strong class="text-stone-900 font-bold block mb-2 text-xl">優先排除生理因素（科學診斷）</strong>
+                            <p class="text-stone-600 text-base">任何玄學判斷前，必須先尋求醫療建議。許多所謂的「靈性反應」其實是生理或精神健康的信號，不應盲目將所有問題歸類為玄學。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-stone-200">
+                        <div class="w-10 h-10 rounded-full bg-teal-500 text-white flex items-center justify-center font-bold mr-5 flex-shrink-0 text-lg">2</div>
+                        <div class="leading-relaxed w-full">
+                            <strong class="text-stone-900 font-bold block mb-2 text-xl">回向壓力測試（債務處理）</strong>
+                            <p class="text-stone-600 text-base mb-3">誠心持誦經典（依個人信仰）回向給冤親債主。</p>
+                            <ul class="list-disc pl-5 space-y-2 text-stone-600 text-base">
+                                <li><strong class="text-amber-700">如果是債主：</strong>念經過程雖有干擾，但做完後會感到放鬆、沉重感減輕，代表債主收到了補償。</li>
+                                <li><strong class="text-red-700">如果是外靈：</strong>會對「正念」極度反抗，讓你產生強烈的煩躁感，甚至誘使你產生「我不需要靠形式、我是天選之人」等傲慢念頭來阻止你繼續。</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="flex items-start bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-stone-200">
+                        <div class="w-10 h-10 rounded-full bg-teal-500 text-white flex items-center justify-center font-bold mr-5 flex-shrink-0 text-lg">3</div>
+                        <div class="leading-relaxed w-full">
+                            <strong class="text-stone-900 font-bold block mb-2 text-xl">終極自問：我是否更自由？</strong>
+                            <p class="text-stone-600 text-base">真正的修行與覺醒，會讓你越來越像真實的自己，並感受到靈魂的自由與平靜。如果某種力量讓你變得越來越虛弱、暴躁、不像原本的自己，無論它自稱是哪位大神，那都是一種傷害，必須請其離開。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 結語 -->
+                <div class="mt-12 bg-teal-50 border border-teal-200 rounded-2xl p-8 text-center">
+                    <h3 class="text-xl font-bold text-teal-900 mb-4 flex items-center justify-center">
+                        <i data-lucide="lightbulb" class="w-6 h-6 mr-2"></i> 教學結語
+                    </h3>
+                    <p class="text-teal-800 leading-relaxed">
+                        真正的「高我」是不需要向外證明的，它本來就在你體內。不要沉迷於分別到底是誰在干擾，訓練自己安守本心，走回現實的路。當你核心穩定，該離開的自然會走，該來的福報也攔不住。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Links -->
         <section class="py-16 bg-white border-t border-stone-200">
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h3 class="text-2xl font-bold text-stone-900 mb-8 text-center">相關影片學習資源</h3>
                 <div class="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden">
-                    <a href="https://youtu.be/ACdpVOoiND0?si=CQnfFIUEg-zAJJSG" target="_blank" rel="noopener noreferrer" class="flex items-center p-5 hover:bg-stone-50 transition-colors border-b border-stone-100 group">
-                        <i data-lucide="play-circle" class="w-6 h-6 text-stone-400 group-hover:text-purple-600 transition-colors mr-4"></i>
-                        <span class="text-stone-700 group-hover:text-purple-900 font-medium">EP66: 2026你最該捉住的”化祿” 之一</span>
-                    </a>
-                    <a href="https://youtu.be/j7zKEZYccSE?si=5-frJgZd41prKhQv" target="_blank" rel="noopener noreferrer" class="flex items-center p-5 hover:bg-stone-50 transition-colors border-b border-stone-100 group">
-                        <i data-lucide="play-circle" class="w-6 h-6 text-stone-400 group-hover:text-purple-600 transition-colors mr-4"></i>
-                        <span class="text-stone-700 group-hover:text-purple-900 font-medium">EP67: 2026你最該捉住的”化祿” 之二</span>
-                    </a>
-                    <a href="https://youtu.be/MZGlB49fXyk?si=GGJu-HDTBEgwgmFC" target="_blank" rel="noopener noreferrer" class="flex items-center p-5 hover:bg-stone-50 transition-colors border-b border-stone-100 group">
-                        <i data-lucide="play-circle" class="w-6 h-6 text-stone-400 group-hover:text-purple-600 transition-colors mr-4"></i>
-                        <span class="text-stone-700 group-hover:text-purple-900 font-medium">EP68: 2026你最該捉住的”化祿” 之三</span>
-                    </a>
-                    <a href="https://youtu.be/ssg6oXJueUE?si=yC8aSVGt7x9Vm3U0" target="_blank" rel="noopener noreferrer" class="flex items-center p-5 hover:bg-stone-50 transition-colors border-b border-stone-100 group">
-                        <i data-lucide="play-circle" class="w-6 h-6 text-stone-400 group-hover:text-purple-600 transition-colors mr-4"></i>
-                        <span class="text-stone-700 group-hover:text-purple-900 font-medium">EP69: 2026你最該捉住的”化祿” 之四</span>
-                    </a>
-                    <a href="https://youtu.be/V3Z7GzRYNfk?si=mzHwvMlIMj8yAVFa" target="_blank" rel="noopener noreferrer" class="flex items-center p-5 hover:bg-stone-50 transition-colors group">
-                        <i data-lucide="play-circle" class="w-6 h-6 text-stone-400 group-hover:text-purple-600 transition-colors mr-4"></i>
-                        <span class="text-stone-700 group-hover:text-purple-900 font-medium">EP70: 2026你最該捉住的”化祿” 之五</span>
+                    <a href="https://youtu.be/p_rYKDpoEGA?si=kD9Fb6L_VhuZEe5D" target="_blank" rel="noopener noreferrer" class="flex items-center p-5 hover:bg-stone-50 transition-colors group">
+                        <i data-lucide="play-circle" class="w-6 h-6 text-stone-400 group-hover:text-teal-600 transition-colors mr-4"></i>
+                        <span class="text-stone-700 group-hover:text-teal-900 font-medium">EP76: 如何辦別高我覺醒？高靈連結？還是冤親干擾丨惡靈入侵</span>
                     </a>
                 </div>
             </div>
@@ -748,7 +963,7 @@
     <!-- 頁面 4：因果與敬畏 (隱藏) -->
     <!-- ========================================== -->
     <main id="page-karma" class="page-content hidden-page">
-        <!-- Hero Section -->
+        <!-- (此處保留原本的因果與敬畏內容，完全不變) -->
         <header class="pt-16 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
             <div class="inline-flex items-center justify-center px-4 py-1.5 mb-6 text-sm font-medium tracking-wider text-rose-900 bg-rose-100 rounded-full">
                 <i data-lucide="scale" class="w-4 h-4 mr-2"></i>
@@ -763,12 +978,10 @@
             </p>
         </header>
 
-        <!-- Core Sections -->
         <section class="py-16 bg-white border-y border-stone-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                    <!-- 1. 核心宇宙規律 -->
                     <div class="p-8 rounded-2xl bg-stone-50 border border-stone-100 hover:shadow-lg transition-shadow duration-300">
                         <div class="w-12 h-12 rounded-xl bg-rose-100 flex items-center justify-center mb-6 text-rose-600">
                             <i data-lucide="scale" class="w-6 h-6"></i>
@@ -786,7 +999,6 @@
                         </div>
                     </div>
 
-                    <!-- 2. 德不配位 -->
                     <div class="p-8 rounded-2xl bg-stone-50 border border-stone-100 hover:shadow-lg transition-shadow duration-300">
                         <div class="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center mb-6 text-orange-600">
                             <i data-lucide="shield" class="w-6 h-6"></i>
@@ -805,7 +1017,6 @@
                     </div>
                 </div>
 
-                <!-- 3. 真實案例警示 -->
                 <div class="bg-rose-50 rounded-3xl p-8 md:p-12 border border-rose-200 mb-12 relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
                         <i data-lucide="alert-triangle" class="w-48 h-48 text-rose-900"></i>
@@ -840,7 +1051,6 @@
                     </div>
                 </div>
 
-                <!-- 4. 修行者的行為準則 -->
                 <div class="max-w-4xl mx-auto">
                     <h3 class="text-2xl font-bold text-stone-900 mb-8 text-center flex items-center justify-center">
                         <i data-lucide="scroll-text" class="w-8 h-8 mr-3 text-orange-600"></i>
@@ -877,7 +1087,6 @@
                     </div>
                 </div>
 
-                <!-- 結語 -->
                 <div class="mt-12 bg-orange-50 border border-orange-200 rounded-2xl p-8 text-center max-w-4xl mx-auto">
                     <h3 class="text-xl font-bold text-orange-900 mb-4 flex items-center justify-center">
                         <i data-lucide="lightbulb" class="w-6 h-6 mr-2"></i> 教學結語
@@ -890,7 +1099,6 @@
             </div>
         </section>
 
-        <!-- Video Links -->
         <section class="py-16 bg-white border-t border-stone-200">
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h3 class="text-2xl font-bold text-stone-900 mb-8 text-center">相關影片學習資源</h3>
