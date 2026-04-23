@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
+    <!-- Lucide Icons (更換為更穩定的 CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
         body {
             font-family: 'Noto Sans TC', sans-serif;
@@ -52,7 +55,7 @@
             transition: all 0.2s ease-in-out;
         }
         
-        /* 純 CSS 漸顯動畫 (取代原本的 AOS，保證絕對不會白畫面) */
+        /* 純 CSS 漸顯動畫 */
         .fade-in-up {
             animation: fadeInUp 0.8s ease-out forwards;
         }
@@ -87,10 +90,10 @@
                 <!-- 桌面版選單 (Dropdown 模式) -->
                 <div class="hidden md:flex items-center h-full space-x-8">
                     
-                    <!-- 分類 1：紫微斗數 -->
+                    <!-- 分類 1：紫微八字 -->
                     <div class="relative h-full flex items-center dropdown-group cursor-pointer">
                         <div class="flex items-center gap-1 text-stone-600 hover:text-teal-700 font-medium transition-colors">
-                            紫微斗數 <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            紫微八字 <i data-lucide="chevron-down" class="w-4 h-4"></i>
                         </div>
                         <!-- 下拉內容 -->
                         <div class="dropdown-menu absolute top-[60px] left-1/2 -translate-x-1/2 w-56 bg-white border border-stone-100 rounded-xl shadow-xl overflow-hidden pt-2 pb-2">
@@ -105,6 +108,9 @@
                             </button>
                             <button onclick="switchPage('page-career')" id="nav-career" class="w-full text-left px-5 py-3 text-sm nav-item-inactive transition-colors">
                                 十二宮事業軌跡
+                            </button>
+                            <button onclick="switchPage('page-bazi')" id="nav-bazi" class="w-full text-left px-5 py-3 text-sm nav-item-inactive transition-colors">
+                                八字五行生命功課
                             </button>
                         </div>
                     </div>
@@ -131,7 +137,6 @@
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="p-2 text-stone-600 hover:text-teal-700 focus:outline-none min-w-[44px] min-h-[44px] flex items-center justify-center bg-stone-100 rounded-lg">
                         <i data-lucide="menu" class="w-6 h-6"></i>
-                        <!-- 若圖示載入失敗的備用文字 -->
                         <span class="sr-only">選單</span>
                     </button>
                 </div>
@@ -141,14 +146,15 @@
         <!-- 手機版展開選單面板 -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-stone-100 absolute w-full left-0 top-16 shadow-xl max-h-[calc(100vh-4rem)] overflow-y-auto">
             <div class="px-4 py-6 space-y-6">
-                <!-- 手機版分類 1：紫微斗數 -->
+                <!-- 手機版分類 1：紫微八字 -->
                 <div>
-                    <div class="text-xs font-bold text-stone-400 uppercase tracking-wider mb-3 px-2">紫微斗數</div>
+                    <div class="text-xs font-bold text-stone-400 uppercase tracking-wider mb-3 px-2">紫微八字</div>
                     <div class="space-y-1">
                         <button onclick="switchPage('page-2026')" id="mobile-nav-2026" class="block w-full text-left px-4 py-3 rounded-xl nav-item-active transition-colors">2026 化祿指南</button>
                         <button onclick="switchPage('page-lianzhen')" id="mobile-nav-lianzhen" class="block w-full text-left px-4 py-3 rounded-xl nav-item-inactive transition-colors">2026 廉貞化忌</button>
                         <button onclick="switchPage('page-accountability')" id="mobile-nav-accountability" class="block w-full text-left px-4 py-3 rounded-xl nav-item-inactive transition-colors">2026 人生問責</button>
                         <button onclick="switchPage('page-career')" id="mobile-nav-career" class="block w-full text-left px-4 py-3 rounded-xl nav-item-inactive transition-colors">十二宮事業軌跡</button>
+                        <button onclick="switchPage('page-bazi')" id="mobile-nav-bazi" class="block w-full text-left px-4 py-3 rounded-xl nav-item-inactive transition-colors">八字五行生命功課</button>
                     </div>
                 </div>
                 <!-- 手機版分類 2：靈性與因果 -->
@@ -563,7 +569,7 @@
                             <h3 class="text-xl font-bold text-stone-900">3. 大橋壓力測試 (檢驗裂縫)</h3>
                         </div>
                         <p class="text-stone-600 leading-relaxed text-sm">
-                            如果一座橋設計承重 50 噸，你卻長期讓 80 噸的車通過，雖然表面看不出，但結構已有裂縫。2026 年的「丙火大風」一吹，隱藏的裂縫會瞬間導致崩塌。
+                            如果一座橋設計承重 50 噸，你卻長期讓 80 噸的車通過，雖然表面看不出，隨結構已有裂縫。2026 年的「丙火大風」一吹，隱藏的裂縫會瞬間導致崩塌。
                         </p>
                     </div>
                 </div>
@@ -697,7 +703,7 @@
     </main>
 
     <!-- ========================================== -->
-    <!-- 頁面 3：2026 人生問責 (全新頁面) -->
+    <!-- 頁面 3：2026 人生問責 (隱藏) -->
     <!-- ========================================== -->
     <main id="page-accountability" class="page-content hidden-page flex-grow">
         <!-- Hero Section -->
@@ -1193,7 +1199,7 @@
                     </div>
                     <div class="flex items-start bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-stone-200">
                         <div class="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold mr-5 flex-shrink-0 text-sm">2</div>
-                        <p class="leading-relaxed"><strong class="text-stone-900 font-bold">預測未來：</strong>下一個宮位就是你即即將進入的能量狀態。</p>
+                        <p class="leading-relaxed"><strong class="text-stone-900 font-bold">預測未來：</strong>下一個宮位就是你即將進入的能量狀態。</p>
                     </div>
                     <div class="flex items-start bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-stone-200">
                         <div class="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold mr-5 flex-shrink-0 text-sm">3</div>
@@ -1237,7 +1243,238 @@
     </main>
 
     <!-- ========================================== -->
-    <!-- 頁面 5：靈性辨別指南 (隱藏) -->
+    <!-- 頁面 5：八字先天五行生命功課 (全新頁面) -->
+    <!-- ========================================== -->
+    <main id="page-bazi" class="page-content hidden-page flex-grow">
+        <!-- Hero Section -->
+        <header class="pt-16 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center fade-in-up">
+            <div class="inline-flex items-center justify-center px-4 py-1.5 mb-6 text-sm font-medium tracking-wider text-amber-900 bg-amber-100 rounded-full">
+                <i data-lucide="layers" class="w-4 h-4 mr-2 text-amber-700"></i>
+                八字先天五行生命功課
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-stone-900 mb-6">
+                八字五行：<br class="md:hidden" />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-teal-600">「缺」的真相與生命修煉</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg text-stone-600 leading-relaxed">
+                這是一份根據 《八字先天五行生命功課》 系列影片所整理的完整教學資料。深入探討八字中「缺五行」的真正含義，並逐一解析金、木、水、火、土五種能量不足時，對性格、事業與人際關係的具體影響。
+            </p>
+        </header>
+
+        <!-- Section 1: 核心概念 -->
+        <section class="py-16 bg-white border-y border-stone-200 fade-in-up">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl md:text-3xl font-bold text-stone-900 flex items-center justify-center">
+                        <i data-lucide="puzzle" class="w-7 h-7 mr-3 text-amber-600"></i>
+                        核心概念：五行「缺」的真相
+                    </h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="p-6 rounded-2xl bg-stone-50 border border-stone-100 flex items-start">
+                        <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold mr-4 shrink-0">1</div>
+                        <div>
+                            <h3 class="text-lg font-bold text-stone-900 mb-2">並非真的「沒有」</h3>
+                            <p class="text-stone-600">每個人體內五行具全，上天造人不會偷工減料。</p>
+                        </div>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-stone-50 border border-stone-100 flex items-start">
+                        <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold mr-4 shrink-0">2</div>
+                        <div>
+                            <h3 class="text-lg font-bold text-stone-900 mb-2">力量不平衡</h3>
+                            <p class="text-stone-600">所謂「缺」是指該能量「不顯著」或「不平衡」。</p>
+                        </div>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-stone-50 border border-stone-100 flex items-start">
+                        <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold mr-4 shrink-0">3</div>
+                        <div>
+                            <h3 class="text-lg font-bold text-stone-900 mb-2">穩定性問題</h3>
+                            <p class="text-stone-600">就像桌子缺了一腳，雖然還是桌子，但不穩定，稍微觸碰東西就會倒。這種「不穩定」是人生各面向不順遂的根源。</p>
+                        </div>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-stone-50 border border-stone-100 flex items-start">
+                        <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold mr-4 shrink-0">4</div>
+                        <div>
+                            <h3 class="text-lg font-bold text-stone-900 mb-2">生命功課</h3>
+                            <p class="text-stone-600">知道缺什麼只是第一步，重點在於如何「補」與「修煉」。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: 五行能量解析 -->
+        <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto fade-in-up">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-stone-900 mb-4 flex items-center justify-center">
+                    <i data-lucide="gem" class="w-8 h-8 mr-3 text-teal-600"></i>
+                    五行能量解析：足與缺的對比
+                </h2>
+                <p class="text-stone-500">檢視自身五行能量的狀態，找出生命的短板</p>
+            </div>
+            
+            <div class="space-y-8">
+                <!-- 1. 金 -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border-l-4 border-slate-400 border-y border-r border-stone-200">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold text-stone-900 flex items-center">
+                            <span class="bg-slate-100 text-slate-700 w-10 h-10 rounded-full flex items-center justify-center mr-3 text-xl">金</span>
+                            （義）：規則與決斷力
+                        </h3>
+                        <div class="mt-3 md:mt-0 text-sm font-medium text-slate-600 bg-slate-50 px-4 py-2 rounded-lg border border-slate-200">
+                            能量充足：有義氣、有原則、決斷力強、說話有份量、氣場足。
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 rounded-xl p-5 border border-slate-100">
+                        <h4 class="font-bold text-slate-800 mb-3 flex items-center"><i data-lucide="trending-down" class="w-5 h-5 mr-2"></i>能量不足（缺金）的表現：</h4>
+                        <ul class="space-y-3 text-stone-700 text-sm">
+                            <li><strong class="text-stone-900">猶豫不決：</strong>面對選擇時反覆考量，常錯失良機。</li>
+                            <li><strong class="text-stone-900">財守不住：</strong>並非賺不到錢，而是管理能力差，錢財容易莫名流失（如被騙或不懂拒絕借貸）。</li>
+                            <li><strong class="text-stone-900">人善被人欺：</strong>缺乏自我保護的「硬殼」，常當便利貼男孩/女孩，累積滿腹委屈卻不敢發聲。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2. 木 -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border-l-4 border-emerald-500 border-y border-r border-stone-200">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold text-stone-900 flex items-center">
+                            <span class="bg-emerald-100 text-emerald-700 w-10 h-10 rounded-full flex items-center justify-center mr-3 text-xl">木</span>
+                            （仁）：生長與慈悲心
+                        </h3>
+                        <div class="mt-3 md:mt-0 text-sm font-medium text-emerald-700 bg-emerald-50 px-4 py-2 rounded-lg border border-emerald-200">
+                            能量充足：有仁慈之心、具創造力與規劃能力、充滿生命力、目標感強。
+                        </div>
+                    </div>
+                    <div class="bg-emerald-50 rounded-xl p-5 border border-emerald-100">
+                        <h4 class="font-bold text-emerald-800 mb-3 flex items-center"><i data-lucide="trending-down" class="w-5 h-5 mr-2"></i>能量不足（缺木）的表現：</h4>
+                        <ul class="space-y-3 text-stone-700 text-sm">
+                            <li><strong class="text-stone-900">缺乏上進心：</strong>提不起勁，對未來沒打算，「見步行步」，人生易停滯不前。</li>
+                            <li><strong class="text-stone-900">慈悲心較弱：</strong>並非壞人，而是比較「冷漠、自我」，難以對他人的痛苦感同身受。</li>
+                            <li><strong class="text-stone-900">做事沒計劃：</strong>想法零散，像一堆未組裝的木材，缺乏將資源整合並實現目標的能力。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 3. 水 -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border-l-4 border-blue-500 border-y border-r border-stone-200">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold text-stone-900 flex items-center">
+                            <span class="bg-blue-100 text-blue-700 w-10 h-10 rounded-full flex items-center justify-center mr-3 text-xl">水</span>
+                            （智）：彈性與溝通力
+                        </h3>
+                        <div class="mt-3 md:mt-0 text-sm font-medium text-blue-700 bg-blue-50 px-4 py-2 rounded-lg border border-blue-200">
+                            能量充足：聰明、變通快、善於傾聽與表達、適應力極強。
+                        </div>
+                    </div>
+                    <div class="bg-blue-50 rounded-xl p-5 border border-blue-100">
+                        <h4 class="font-bold text-blue-800 mb-3 flex items-center"><i data-lucide="trending-down" class="w-5 h-5 mr-2"></i>能量不足（缺水）的表現：</h4>
+                        <ul class="space-y-3 text-stone-700 text-sm">
+                            <li><strong class="text-stone-900">執著死板：</strong>認死理，不願隨著大環境改變，容易在工作與人際中產生矛盾。</li>
+                            <li><strong class="text-stone-900">溝通力差：</strong>要麼沉默寡言，要麼開口就得罪人，說話太直不考慮他人感受。</li>
+                            <li><strong class="text-stone-900">適應力弱：</strong>抗拒新知識，像蓋了蓋子的瓶子，環境變遷時會感到極度痛苦。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 4. 火 -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border-l-4 border-red-500 border-y border-r border-stone-200">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold text-stone-900 flex items-center">
+                            <span class="bg-red-100 text-red-700 w-10 h-10 rounded-full flex items-center justify-center mr-3 text-xl">火</span>
+                            （禮）：熱情與表現力
+                        </h3>
+                        <div class="mt-3 md:mt-0 text-sm font-medium text-red-700 bg-red-50 px-4 py-2 rounded-lg border border-red-200">
+                            能量充足：像小太陽、有禮貌、充滿活力、樂於分享、在群體中亮眼。
+                        </div>
+                    </div>
+                    <div class="bg-red-50 rounded-xl p-5 border border-red-100">
+                        <h4 class="font-bold text-red-800 mb-3 flex items-center"><i data-lucide="trending-down" class="w-5 h-5 mr-2"></i>能量不足（缺火）的表現：</h4>
+                        <ul class="space-y-3 text-stone-700 text-sm">
+                            <li><strong class="text-stone-900">消極被動：</strong>人生觀偏向灰色，對好消息的第一反應是懷疑而非開心。</li>
+                            <li><strong class="text-stone-900">社交冷感：</strong>懶得維持禮儀（如見人不打招呼、不說謝謝），人際關係缺乏溫度與動力。</li>
+                            <li><strong class="text-stone-900">容易被忽視：</strong>缺乏向外散發的能量，即便有才華也不敢表達，常有強烈「不被看見」的失落感。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 5. 土 -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border-l-4 border-amber-500 border-y border-r border-stone-200">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold text-stone-900 flex items-center">
+                            <span class="bg-amber-100 text-amber-700 w-10 h-10 rounded-full flex items-center justify-center mr-3 text-xl">土</span>
+                            （信）：穩定與包容力
+                        </h3>
+                        <div class="mt-3 md:mt-0 text-sm font-medium text-amber-700 bg-amber-50 px-4 py-2 rounded-lg border border-amber-200">
+                            能量充足：可靠、誠穩、有耐性、像大地一樣承載萬物，讓人感到踏實。
+                        </div>
+                    </div>
+                    <div class="bg-amber-50 rounded-xl p-5 border border-amber-100">
+                        <h4 class="font-bold text-amber-800 mb-3 flex items-center"><i data-lucide="trending-down" class="w-5 h-5 mr-2"></i>能量不足（缺土）的表現：</h4>
+                        <ul class="space-y-3 text-stone-700 text-sm">
+                            <li><strong class="text-stone-900">缺乏信用：</strong>並非故意騙人，而是容易忘記承諾或遇困即撤，給人「飄、虛」的感覺。</li>
+                            <li><strong class="text-stone-900">浮躁不安：</strong>做事只有三分鐘熱度，難以深耕，什麼都學一點但沒一樣精通。</li>
+                            <li><strong class="text-stone-900">缺乏歸屬感：</strong>像浮萍一樣無根，頻繁換工作或居所，內心渴望安定卻處於漂泊狀態。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: 結語 -->
+        <section class="py-16 bg-stone-100 border-t border-stone-200 fade-in-up">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-amber-50 border border-amber-200 rounded-3xl p-8 md:p-12 text-center shadow-sm">
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-amber-600 text-white flex items-center justify-center shadow-md">
+                            <i data-lucide="star" class="w-8 h-8"></i>
+                        </div>
+                    </div>
+                    <h2 class="text-3xl font-bold text-amber-900 mb-6">結語：知道是為了修補</h2>
+                    <p class="text-amber-800 leading-relaxed text-lg max-w-2xl mx-auto">
+                        陳又老師強調，了解自己的五行短板不是為了嘆氣認命，而是為了進入第二步：<strong class="font-bold text-amber-900">「立」</strong>。知道不足之處後，透過後天的修煉與補足，才能讓人生這張桌子重新穩固。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Links -->
+        <section class="py-16 bg-white border-t border-stone-200 fade-in-up">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-2xl font-bold text-stone-900 mb-8 text-center">相關影片學習資源</h3>
+                <div class="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden">
+                    <a href="http://www.youtube.com/watch?v=LPZfD5-MLkQ" target="_blank" rel="noopener noreferrer" class="flex items-center p-5 hover:bg-stone-50 transition-colors border-b border-stone-100 group">
+                        <i data-lucide="play-circle" class="w-6 h-6 text-stone-400 group-hover:text-amber-600 transition-colors mr-4"></i>
+                        <span class="text-stone-700 group-hover:text-amber-900 font-medium">EP77 五行生命功課之一：概念篇</span>
+                    </a>
+                    <a href="http://www.youtube.com/watch?v=5BMLHBkLM5g" target="_blank" rel="noopener noreferrer" class="flex items-center p-5 hover:bg-stone-50 transition-colors border-b border-stone-100 group">
+                        <i data-lucide="play-circle" class="w-6 h-6 text-stone-400 group-hover:text-amber-600 transition-colors mr-4"></i>
+                        <span class="text-stone-700 group-hover:text-amber-900 font-medium">EP78 五行生命功課之二：缺金篇</span>
+                    </a>
+                    <a href="http://www.youtube.com/watch?v=OjnnfOyaBdk" target="_blank" rel="noopener noreferrer" class="flex items-center p-5 hover:bg-stone-50 transition-colors border-b border-stone-100 group">
+                        <i data-lucide="play-circle" class="w-6 h-6 text-stone-400 group-hover:text-amber-600 transition-colors mr-4"></i>
+                        <span class="text-stone-700 group-hover:text-amber-900 font-medium">EP79 五行生命功課之三：缺木篇</span>
+                    </a>
+                    <a href="http://www.youtube.com/watch?v=vZdjqjeftII" target="_blank" rel="noopener noreferrer" class="flex items-center p-5 hover:bg-stone-50 transition-colors border-b border-stone-100 group">
+                        <i data-lucide="play-circle" class="w-6 h-6 text-stone-400 group-hover:text-amber-600 transition-colors mr-4"></i>
+                        <span class="text-stone-700 group-hover:text-amber-900 font-medium">EP80 五行生命功課之四：缺水篇</span>
+                    </a>
+                    <a href="http://www.youtube.com/watch?v=bRTee3j2NfQ" target="_blank" rel="noopener noreferrer" class="flex items-center p-5 hover:bg-stone-50 transition-colors border-b border-stone-100 group">
+                        <i data-lucide="play-circle" class="w-6 h-6 text-stone-400 group-hover:text-amber-600 transition-colors mr-4"></i>
+                        <span class="text-stone-700 group-hover:text-amber-900 font-medium">EP81 五行生命功課之五：缺火篇</span>
+                    </a>
+                    <a href="http://www.youtube.com/watch?v=5vC5lK8RpgE" target="_blank" rel="noopener noreferrer" class="flex items-center p-5 hover:bg-stone-50 transition-colors group">
+                        <i data-lucide="play-circle" class="w-6 h-6 text-stone-400 group-hover:text-amber-600 transition-colors mr-4"></i>
+                        <span class="text-stone-700 group-hover:text-amber-900 font-medium">EP82 五行生命功課之六：缺土篇</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================================== -->
+    <!-- 頁面 6：靈性辨別指南 (隱藏) -->
     <!-- ========================================== -->
     <main id="page-spirit" class="page-content hidden-page flex-grow">
         <header class="pt-16 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center fade-in-up">
@@ -1451,7 +1688,7 @@
     </main>
 
     <!-- ========================================== -->
-    <!-- 頁面 6：因果與敬畏 (隱藏) -->
+    <!-- 頁面 7：因果與敬畏 (隱藏) -->
     <!-- ========================================== -->
     <main id="page-karma" class="page-content hidden-page flex-grow">
         <header class="pt-16 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center fade-in-up">
@@ -1616,17 +1853,16 @@
         </div>
     </footer>
 
-    <!-- Scripts (更換為更穩定的 CDN) -->
-    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
+    <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 嘗試載入圖示，若失敗也不會影響畫面顯示
+            // 確保 Lucide Icons 載入並渲染
             try {
                 if (typeof lucide !== 'undefined') {
                     lucide.createIcons();
                 }
             } catch (e) {
-                console.log("Icons failed to load, but page will continue working.");
+                console.error("Icons failed to load:", e);
             }
 
             // 手機版漢堡選單邏輯
@@ -1663,8 +1899,8 @@
             }
 
             // 更新所有按鈕狀態 (重置為 inactive)
-            const allNavIds = ['nav-spirit', 'nav-career', 'nav-2026', 'nav-lianzhen', 'nav-accountability', 'nav-karma', 
-                               'mobile-nav-spirit', 'mobile-nav-career', 'mobile-nav-2026', 'mobile-nav-lianzhen', 'mobile-nav-accountability', 'mobile-nav-karma'];
+            const allNavIds = ['nav-spirit', 'nav-career', 'nav-2026', 'nav-lianzhen', 'nav-accountability', 'nav-bazi', 'nav-karma', 
+                               'mobile-nav-spirit', 'mobile-nav-career', 'mobile-nav-2026', 'mobile-nav-lianzhen', 'mobile-nav-accountability', 'mobile-nav-bazi', 'mobile-nav-karma'];
             
             allNavIds.forEach(id => {
                 const btn = document.getElementById(id);
@@ -1697,6 +1933,11 @@
                 mobileMenu.classList.add('hidden');
                 mobileMenuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i><span class="sr-only">選單</span>';
                 if (typeof lucide !== 'undefined') lucide.createIcons();
+            }
+
+            // 確保切換頁面後圖示正常顯示
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
             }
 
             // 滾動回頂部
